@@ -447,7 +447,7 @@
         }
     
         .container-top {
-            flex-direction: column;
+            flex-direction: row;
             height: auto;
             padding: 10px;
             text-align: center;
@@ -534,6 +534,8 @@
             left: 0;
             top: 0;
             margin: 10px 0;
+            text-decoration: none;
+            color: #EAA64D;
         }
     
         .social-item {
