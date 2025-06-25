@@ -428,12 +428,13 @@
     display: none !important;
   }
   
-  @media screen and (max-width: 548px) {
+  @media screen and (max-width: 406px) {
     .eliminar {
       position: relative;
-      width: 100%;
+      width: 30%;
       height: auto;
-      margin-top: 8px;
+      top: 0;  
+      right: -3px;
       padding: 10px;
     }
     #form input[type="text"] {
