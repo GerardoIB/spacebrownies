@@ -1,0 +1,27 @@
+[
+    {
+      "model": "myapp.brownies",
+      "pk": 1,
+      "fields": {
+        "name": "Tradicional",
+        "price": 30.00
+      }
+    },
+    {
+      "model": "myapp.brownies",
+      "pk": 2,
+      "fields": {
+        "name": "Relleno",
+        "price": 40.00
+      }
+    },
+    {
+      "model": "myapp.brownies",
+      "pk": 3,
+      "fields": {
+        "name": "Personalizado",
+        "price": 45.00
+      }
+    }
+  ]
+  

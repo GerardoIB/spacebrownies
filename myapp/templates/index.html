@@ -1,0 +1,71 @@
+{% extends "layouts/top.html" %}
+{% load static %}
+  {% block content %}
+  <div class="main">
+        <article class="welcom" id="welcom">
+            <h1>Bienvenido a Space Brownies</h1>
+            <p>En Space Brownies ofrecemos una experiencia única con nuestros brownies artesanales, elaborados con
+                ingredientes de la más alta calidad. Desde sabores clásicos hasta combinaciones innovadoras, cada bocado
+                te llevará a un viaje de sabor que no olvidarás.</p>
+            <p>¡Explora nuestro menú y descubre tu nuevo favorito!</p>
+        </article>
+        <article class="services" id="serivices">
+            <h2>Nuestros Productos</h2>
+            <ul>
+                {% for brownie in brownies %}
+                <li>
+                    <p>{{brownie.name}} ......... ${{brownie.price}}</p>
+                    <button class="btn-carrito" data-name="{{brownie.name}}" data-price="{{ brownie.price}}"> Agregar carrito</button>
+                </li>
+                {% endfor %}
+            </ul>
+        </article>
+        <article class="ubicacion">
+            <h2>Ubicación</h2>
+            {{ location.address}}
+            <p>Latitud : {{ location.latitude }} Longitud: {{ location.longitude }}</p>
+            <div id="map">
+
+            </div>
+        </article>
+
+        <article class="contacto" id="contacto">
+            <h2>Contactos</h2>
+            <ul>
+                <li class="social-item"><img class="" src="{% static 'img/instagram.png'%}" alt="">
+                <p><a href="https://www.instagram.com/gerardooo_i/"> gerardooo_i</a></p>
+                <p><a href="https://www.instagram.com/angel_valencia_745/?utm_source=ig_web_button_share_sheet">angel_valencia_745</a></p>
+                <p><a href="https://www.instagram.com/rodrix__q8?utm_source=ig_web_button_share_sheet&igsh=MXBzaHhmcW9hcGI3Nw==">rodrix__q8
+                </a></p>
+                </li>
+                <li class="social-item">
+                    <img src="{% static 'img/llamada-telefonica.png' %}" class="" alt="">
+                    <p>712-189-5039</p>
+                </li>
+            </ul>
+        </article>
+    </div>
+    <div class="carrito">
+        <div class="contador" id="contador"> 0</div>
+        <a href="carrito"> <img src="{% static 'img/carrito-de-compras.png' %}" alt=""></a>
+    </div>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const lat = {{ location.latitude }};
+        const lng = {{ location.longitude }};
+
+        const map = L.map('map').setView([lat, lng], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+
+        L.marker([lat, lng]).addTo(map)
+            .bindPopup("{{ location.address }}")
+            .openPopup();
+    </script>
+{% endblock %}
+

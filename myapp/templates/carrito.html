@@ -1,0 +1,23 @@
+{% extends "layouts/top.html" %}
+{% load static %}
+
+{% block content %}
+<div class="main">
+    <article class="product" id="producto">
+        <button type="submit"> Comprar</button>
+    </article>
+    <article class="oculto" id="form">
+        <form action="">
+            <input type="text" name="nombre" id="name" placeholder="Ingresa tu nombre" required>
+            <button type="submit" id="pedido"> Enviar pedido   </button>
+            
+        </form>
+    </article>
+</div>
+<div class="home">
+    <a href="/"><img src="{% static 'img/hogar.png'%}" alt=""></a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+{% endblock %}

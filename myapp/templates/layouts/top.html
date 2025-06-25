@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caprasimo&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{% static 'js/scripts.js' %}"></script>
+    <script src="{% static 'js/carrito.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'img/logo.jpg' %}" type="image/x-icon">
+
+    <title>Space brownies</title>
+</head>
+
+<body>
+    <div class="container-top">
+
+        <nav>
+            <h2>Space brownies</h2>
+            <img src="../static/img/menu.png" id="nav-var" class="var" alt="Menu">
+            <div class="oculto" id="nav">
+                <ul>
+                    <li ><a href="#welcom">Inicio</a></li>
+                    <li><a href="#serivices">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </nav>
+        <img src="../static/img/logo.jpg" alt="Logo">
+    </div>
+    {% block content %}
+    {% endblock %}
+</body>
+
+</html>
