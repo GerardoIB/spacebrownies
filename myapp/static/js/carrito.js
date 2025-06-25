@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
   html += '</ul>';
   const total = carrito.reduce((sum, item) => sum + parseFloat(item.price), 0);
   html += `<p><strong>Total:</strong> $${total.toFixed(2)}</p>`;
+  
   html += '<button id="btn-comprar" type="button">Comprar</button>';
 
   
