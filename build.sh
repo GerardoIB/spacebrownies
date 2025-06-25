@@ -5,7 +5,7 @@ pip install -r requirements.txt
 
 python manage.py collectstatic --no-input
 
-python manage.py shell
+python manage.py loaddata brownies.json
 
 
 python manage.py migrate
